@@ -1,0 +1,28 @@
+<div>
+	<p>Quiz App</p>
+</div>
+<div>
+
+	<h3>Welcomre to Quiz!</h3>
+	<button ng-click="start(); viewscreen=true;" value="Start">Start Quiz</button>
+</div>
+<div ng-show="inProgress && viewscreen"></div>
+<div ng-show="!quizOver">
+	<h3>{{question}}</h3>
+	<ul>
+		<li ng-repeat="opt in options">
+			<label>{{opt}}</label>
+		</li>
+	</ul>
+	<input type="text" name="name" placeholder="Please enter answer" ng-model="selectedValue" ng-show="!goToNext">
+	<button ng-click="validateAns()" ng-show="!goToNext">Submit</button>
+</div>
+</div>
+<div ng-show="inProgress && quizOver">
+	<h4>Score: <label>{{score}}</label></h4>
+</div>
+<div ng-show="goToNext">
+	<button ng-click="showQuestion()" class="next-question">Next</button>
+	<span ng-show="correctAns">That is correct!</span>
+	<span ng-show="!correctAns">Sorry, that is an incorrect answer.</span>
+</div>
