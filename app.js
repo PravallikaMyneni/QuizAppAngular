@@ -30,7 +30,7 @@ app.directive("appDirective", function (quizFactory) {
 						$scope.correctAns = false;
 					}
 				} else {
-
+                    $scope.correctAns = false;
 				}
 				$scope.goToNext = true;
 			};
@@ -49,7 +49,6 @@ app.directive("appDirective", function (quizFactory) {
 			};
 			$scope.showQuestion = function () {
 				$scope.selectedValue = "";
-				//$scope.id = $scope.id+1;
 				$scope.goToNext = false;
 				$scope.getQuestion();
 			};
